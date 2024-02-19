@@ -1,0 +1,104 @@
+<!-- <p>FORM-TASK 
+    login works!</p> -->
+<!-- ******************************* -->
+<form
+  action=""
+  #contactForm="ngForm"
+  (ngSubmit)="contactForm.form.valid && OnSubmit()"
+  novalidate
+>
+  <h1>Login Form</h1>
+  <div>
+    <label for="">UserName</label>
+    <input
+      type="text"
+      name="userName"
+      required
+      minlength="8"
+      #userName="ngModel"
+      [(ngModel)]="MyContact.userName"
+    />
+  </div>
+  <div
+    *ngIf="!userName?.valid && (userName?.dirty || userName?.touched)"
+    class="error"
+  >
+    <div *ngIf="userName.errors?.['required']">UserName is Required</div>
+  </div>
+  <div *ngIf="userName.errors?.['minlength']">
+    UserName minimum length is{{userName.errors?.['minlength']?.requiredLength}}
+  </div>
+  <!-- ***************************** -->
+  <!-- Password -->
+  <div>
+    <label for="">Password</label>
+    <input
+      type="text"
+      name="password"
+      required
+      minlength="8"
+      #password="ngModel"
+      [(ngModel)]="MyContact.password"
+    />
+  </div>
+  <div
+    *ngIf="!password?.valid && (password?.dirty || password?.touched)"
+    class="error"
+  >
+    <div *ngIf="password.errors?.['required']">Password is Required</div>
+  </div>
+  <div *ngIf="password.errors?.['minlength']">
+    password minimum length is{{password.errors?.['minlength']?.requiredLength}}
+  </div>
+<!-- ******************************** -->
+  <!-- ************************************** -->
+  <!--  Email-->
+
+  <div>
+    <label for="email">Email</label>
+    <input
+      type="text"
+      name="email" 
+      required
+      email
+      #email="ngModel"
+      [(ngModel)]="MyContact.email"
+    />
+  </div>
+  <div *ngIf="!email.valid && (email?.dirty || email?.touched)" class="error">
+    <div *ngIf="email.errors?.['required']">Email is Required</div>
+    <div *ngIf="email.errors?.['email']">Invalid Email Address</div>
+  </div>
+<!-- ********************************* -->
+  <div>
+    <label for="gender">Gender</label>
+    <input
+      type="radio"
+      value="male"
+      name="gender"
+      #gender="ngModel"
+      [(ngModel)]="MyContact.gender"
+    />Male
+    <input
+      type="radio"
+      value="female"
+      name="gender"
+      #gender="ngModel"
+      [(ngModel)]="MyContact.gender"
+    />FeMale
+  </div>
+  <div
+    *ngIf="!gender?.valid && (gender?.dirty || gender?.touched)"
+    class="error"
+  >
+    <div *ngIf="gender.errors?.['required']">Geneder is Must</div>
+  </div>
+<!-- ******************************** -->
+  <p>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </p>
+
+  <p>{{ contactForm.valid }}</p>
+
+  <p>{{ contactForm.value | json }}</p>
+</form>

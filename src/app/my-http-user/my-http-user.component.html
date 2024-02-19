@@ -1,0 +1,22 @@
+<!-- <p>my-http-user works!</p> -->
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>Last_Name</th>
+            <th>Email</th>
+            <th>Avatar</th>
+        </tr>
+        @for(use of user;track use){
+        <tr>
+            <td>{{use.id}}</td>
+            <td>{{use.first_name}}</td>
+            <td>{{use.last_name}}</td>
+            <td>{{use.email}}</td>
+            <td><img src="{{use.avatar}}" alt="Avatar"></td>
+
+        </tr>
+    }
+    </tbody>
+</table>

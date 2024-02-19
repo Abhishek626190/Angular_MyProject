@@ -1,0 +1,11 @@
+<p>add-course works!</p>
+
+<p>task2 works!</p>
+
+<input type="text" name="cname" [(ngModel)]='cname'><br>
+<button (click)="addCourse()">click</button>
+
+<ul *ngFor="let c of list1">
+
+    <li [style.backgroundColor]="c.colorname" (click)="checkitem(c)">{{c.coursename}}</li>
+</ul>

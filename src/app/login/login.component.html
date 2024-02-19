@@ -1,0 +1,57 @@
+<p>login works!</p>
+<!-- ******************************* -->
+<form action="" #contactForm="ngForm" (ngSubmit)="contactForm.form.valid && OnSubmit()" novalidate>
+    <h1>Login Form</h1>
+    <div>
+        <label for="">FirstName</label>
+        <input type="text" name="firstName" required minlength="8"
+        #firstName="ngModel" [(ngModel)]="MyContact.firstName">
+    </div>
+    <div
+        *ngIf="!firstName?.valid  && (firstName?.dirty||firstName?.touched)" class="error">
+        <div *ngIf="firstName.errors?.['required']">FirstName is Required</div>
+    </div>
+    <div *ngIf="firstName.errors?.['minlength']">
+        FirstName minimum length is{{firstName.errors?.['minlength']?.requiredLength}}
+        
+    </div>
+    <!-- ***************************** -->
+    <div>
+        <label for="">LastName</label>
+        <input type="text" name="lastName" required minlength="10"
+        #lastName="ngModel" [(ngModel)]="MyContact.lastName">
+    </div>
+    <div *ngIf="!lastName?.valid && (lastName?.dirty||lastName?.touched)" class="error">
+        <div *ngIf="lastName.errors?.['required']">LastName is required</div>
+    </div>
+    <div *ngIf="lastName.errors?.['minlength']">
+        LastName minimum Length is {{lastName.errors?.['minlength']?.requiredLength}}
+
+    </div>
+     <!-- *************************** -->
+     <div>
+        <label for="email">Email</label>
+        <input
+          type="text"
+          name="email" 
+          required
+          email
+          #email="ngModel"
+          [(ngModel)]="MyContact.email"
+        />
+      </div>
+      <div *ngIf="!email.valid && (email?.dirty || email?.touched)" class="error">
+        <div *ngIf="email.errors?.['required']">Email is Required</div>
+        <div *ngIf="email.errors?.['email']">Invalid Email Address</div>
+      </div>
+    
+    <!-- *********************** -->
+    <div>
+    <label for="">Gender</label>
+    <input type="radio" value="male" name="gender">Male
+    <input type="radio" value="female" name="gender">Female
+    </div>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>

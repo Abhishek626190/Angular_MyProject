@@ -1,0 +1,28 @@
+<p>switch-demo works!</p>
+
+<p><b>List of Courses</b></p>
+
+<ol>
+  <li>Java</li>
+  <li>Python</li>
+  <li>C++</li>
+  <li>React</li>
+  <li>Rust</li>
+  <li>Linux</li>
+
+</ol>
+<br />
+Enter a Number of Course : <input type="text" [(ngModel)]="number" />
+<button (click)="Enroll()">Click Me</button>
+<div [ngSwitch]="number">
+  <div *ngSwitchCase="'1'"><b>You have Selected a Java</b></div>
+  <div *ngSwitchCase="'2'"><b>You have Selected a Python</b></div>
+  <div *ngSwitchCase="'3'"><b>You have Selected a C++</b></div>
+  <div *ngSwitchCase="'4'"><b>You have Selected a React</b></div>
+  <div *ngSwitchCase="'5'"><b>You have Selected a Rust</b></div>
+  <div *ngSwitchCase="'6'"><b>You have Selected a Linux</b></div>
+
+  <div *ngSwitchDefault>Please Select One Course</div>
+</div>
+
+<br /><br />

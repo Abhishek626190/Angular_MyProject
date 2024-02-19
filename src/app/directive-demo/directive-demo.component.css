@@ -1,0 +1,28 @@
+th{
+    border:2px solid red;
+}
+td
+{
+    border: 2px solid black;
+}
+table
+{
+    margin:50px,50px,50px,50px;
+    
+}
+label
+{
+    display:block;
+    font-size: 50px;
+}
+button{
+    display: block;
+    margin-top:50px;
+}
+form{
+    margin-bottom: 100px;
+}
+.form{
+    border: 2px solid red;
+    height: 450px;
+}

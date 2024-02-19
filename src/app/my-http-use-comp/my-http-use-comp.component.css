@@ -1,0 +1,21 @@
+table,td,tr,th{
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-top: 50px;
+    margin-left: 50px;
+    text-align: center;
+       
+}
+table
+{
+height: 300px;
+width: 30%;
+font-weight: 700;
+}
+td
+{
+    color: rgb(12, 15, 207);
+}
+form{
+    margin-left: 50px;
+}
